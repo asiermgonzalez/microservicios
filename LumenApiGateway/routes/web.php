@@ -2,17 +2,16 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
+$router->get('/marcas_vehiculos', 'MarcaVehiculoController@index');
+$router->post('/marcas_vehiculos', 'MarcaVehiculoController@store');
+$router->get('/marcas_vehiculos/{marca_vehiculo}', 'MarcaVehiculoController@show');
+$router->put('/marcas_vehiculos/{marca_vehiculo}', 'MarcaVehiculoController@update');
+$router->patch('/marcas_vehiculos/{marca_vehiculo}', 'MarcaVehiculoController@update');
+$router->delete('/marcas_vehiculos/{marca_vehiculo}', 'MarcaVehiculoController@destroy');
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/citas_taller', 'CitaTallerController@index');
+$router->post('/citas_taller', 'CitaTallerController@store');
+$router->get('/citas_taller/{cita_taller}', 'CitaTallerController@show');
+$router->put('/citas_taller/{cita_taller}', 'CitaTallerController@update');
+$router->patch('/citas_taller/{cita_taller}', 'CitaTallerController@update');
+$router->delete('/citas_taller/{cita_taller}', 'CitaTallerController@destroy');
